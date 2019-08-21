@@ -79,5 +79,9 @@ motor::~motor(){
   printf("Motor: Shutting Down...\n");
   free(targetrpms);
   free(currentrpms);
+  free(thrusterAmps);
+  free(thrusterVolts);
+  free(thrusterTemps);
+  free(thrusterStatus);
   printf("Motor: Integer Arrays freed.");
 }
