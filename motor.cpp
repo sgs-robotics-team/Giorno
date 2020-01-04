@@ -35,12 +35,12 @@ void motor::initialize(){
 }
 
 void motor::setTargetRPM(int mID,int val){
-  targetrpms[mID]=val;
+  targetrpms[mID]=val+5000;
 }
 
 void motor::setTargetRPM(int val){
   for(int i = 0;i < NUMMOTORS;i++){
-    targetrpms[i]=val;
+    targetrpms[i]=val+5000;
   }
 }
 

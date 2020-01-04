@@ -71,8 +71,8 @@ def head(d,header): #looks at header
     return 0
 
 def msg(d,arr): #looks at data array
-    for i in int(MESSAGESIZE/2):
-        temp=(arr[2*i]<<8)+(arr[2*i+1])
+    for i in range(int(MESSAGESIZE/2)):
+        temp=(arr[2*i]<<8)+(arr[2*i+1])-5000
         d.set_tRPMs(i,temp)
 
 def main_thread():
@@ -86,7 +86,7 @@ def main_thread():
                 print('Connected by',addr)
                 while True:
                     data = conn.recv(BUFSIZE)
-                    if not data:    
+                    if not data:
                         break
                     header = list(data)[:HEADERSIZE]
                     print(list(data))
@@ -94,7 +94,9 @@ def main_thread():
                     print(hr)
                     if(hr==1): #recv instructions
                         message = list(data)[HEADERSIZE:]
+                        msg(d,message)
                         print(message)
+                        print(d.target_rpm)
                     if(hr==2): #reply
                         s = "Hi, server says hi after receiving from client"
                         print("sending: %s" % s)
