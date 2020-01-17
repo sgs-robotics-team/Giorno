@@ -1,10 +1,4 @@
-/**
-    SGS Robotics
-    motor.cpp
 
-    @author Stephen Yang
-    @version 1.2 13/08/19
-*/
 #include <cstdlib>
 #include <cstdio>
 

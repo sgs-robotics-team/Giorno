@@ -18,7 +18,6 @@ serialize::serialize(int size){
   this->cbuf = (unsigned char*) malloc(size*2);
   this->nbuf = (char*) malloc(size);
   initialize();
-  printf("Serialize: Buffers Initialized\n");
 }
 
 void serialize::initialize(){
@@ -77,14 +76,10 @@ int* serialize::convert(unsigned char* a){
   return ibuf;
 }
 
-void serialize::test(){
-  printf("Serialize class functional\n");
-}
-
 serialize::~serialize(){
   printf("Serialize: Shutting down...\n");
   free(ibuf);
   free(cbuf);
   free(nbuf);
-  printf("Serialize: Buffers freed.\n");
+  printf("Serialize: bufs freed.\n");
 }

@@ -1,10 +1,4 @@
-/**
-    SGS Robotics
-    motor.h
 
-    @author Stephen Yang
-    @version 1.2 13/08/19
-*/
 #include "serialize.h"
 #include "transferclient.h"
 
