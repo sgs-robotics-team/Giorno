@@ -18,7 +18,6 @@ motor::motor(): tco(),so((int)NUMMOTORS){//(transferclient a,serialize b){
   this->thrusterStatus = (bool*) malloc(NUMMOTORS);
   initialize();
   printf("Motor: RPM Arrays Initialized\n");
-  test();
 }
 
 void motor::initialize(){
@@ -60,13 +59,6 @@ int motor::updateCurrentRPMs(){
 
 int motor::updateTargetRPMs(){
   tco.tsend(so.iToC(targetrpms));
-}
-
-void motor::test(){
-  printf("\nMotor class functional\n");
-  tco.test();
-  so.test();
-  printf("\n");
 }
 
 motor::~motor(){
